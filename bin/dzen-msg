@@ -1,0 +1,1 @@
+echo "$*" | dzen2 -y 9000 -p 1 -fn '-*-dejavu sans condensed-*-*-*-*-*-*-*-*-*-*-*-*' -bg black -fg white

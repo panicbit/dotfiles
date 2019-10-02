@@ -1,0 +1,8 @@
+amixer set Master toggle
+mutestate=$(amixer get Master | grep -oEm 1 "\[on\]|\[off\]" | sed -E 's/\[(.*)\]/\1/g')
+if [ "$mutestate" == "off" ]; then
+    msg="^fg(red)Muted"
+else
+    msg="^fg(green)Unmuted"
+fi
+dzen-msg "$msg"

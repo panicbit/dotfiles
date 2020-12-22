@@ -1,0 +1,12 @@
+#!/bin/bash
+
+volume=$(ponymix get-volume)
+msg="Volume: $volume%"
+
+echo "$msg"
+
+if ponymix is-muted; then
+    msg="$msg | ^fg(red)Muted"
+fi
+
+dzen-msg $msg

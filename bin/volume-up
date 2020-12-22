@@ -1,17 +1,5 @@
 #!/bin/bash
 
-volume=$(amixer get Master | grep -oEm 1 '[0-9]{1,3}%')
-volume=${volume%?}
-mutestate=$(amixer get Master | grep -oEm 1 "\[on\]|\[off\]" | sed -E 's/\[(.*)\]/\1/g')
-echo $volume
-echo $mutestate
+ponymix increase 10
 
-volume=$[$volume+10]
-if [ $volume -gt 100 ]; then volume=100; fi
-echo New Volume: $volume
-amixer set Master $volume%
-msg="Volume: $volume%"
-if [ "$mutestate" == "off" ]; then
-    msg="$msg | ^fg(red)Muted"
-fi
-dzen-msg $msg
+exec volume-display

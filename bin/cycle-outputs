@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+i3-msg -t command workspace $(i3-msg -t get_workspaces | jq '(.[] | select(.focused)) as $focused | map(select(.visible)) as $visible | ($visible | map(.output) | index($focused.output)) as $focusedIndex | (($focusedIndex + 1) % ($visible | length)) as $nextIndex | $visible[$nextIndex].name')

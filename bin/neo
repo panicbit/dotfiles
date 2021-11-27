@@ -1,0 +1,1 @@
+setxkbmap de neo -option -option compose:menu #-option ctrl:swap_lalt_lctl

@@ -14,7 +14,7 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 11
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -57,16 +57,22 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move workspace
+bindsym $mod+$alt+Left move workspace to output left
+bindsym $mod+$alt+Down move workspace to output down
+bindsym $mod+$alt+Up move workspace to output up
+bindsym $mod+$alt+Right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -78,8 +84,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # Toggle borders
-bindsym $alt+f border toggle
-bindsym $alt+g border toggle
+bindsym $mod+$alt+f border toggle
+bindsym $mod+$alt+g border toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -115,6 +121,10 @@ bindsym $mod+0 workspace number 10
 # cycle through workspace
 bindsym Ctrl+$alt+Left workspace prev_on_output
 bindsym Ctrl+$alt+Right workspace next_on_output
+
+# cycle through outputs
+bindsym $mod+Tab exec --no-startup-id cycle-outputs
+bindsym --whole-window button15 exec --no-startup-id cycle-outputs
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -177,6 +187,7 @@ bar {
     focused_workspace #3f51b5 #3f51b5 #ffffff
     urgent_workspace #3f51b5 #e51c23 #ffffff
   }
+  bindsym button15 exec --no-startup-id cycle-outputs
 }
 
 # Toggle visibility of i3bar
@@ -261,3 +272,5 @@ for_window [class="^Firefox$"] border pixel 1
 hide_edge_borders horizontal
 
 for_window [class=".*"] title_format "💛 %title"
+
+bindsym Print exec --no-startup-id gnome-screenshot -i -a

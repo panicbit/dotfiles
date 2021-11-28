@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+fbsetbg -l & disown
+killall xpointerbarrier
+#setsid --fork xpointerbarrier 1 0 0 1
+xpointerbarrier 1 0 0 1 & disown
+xset s 9999
+xset dpms 9999 9999 9999
+

@@ -4,4 +4,4 @@ set -e
 cd ~/bin
 rm -rf VSCode-linux-x64
 curl -L 'https://go.microsoft.com/fwlink/?LinkID=620884' | tar -xvzf -
-ln -sf ~/bin/VSCode-linux-x64/code code
+ln -sf ~/bin/VSCode-linux-x64/bin/code code

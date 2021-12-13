@@ -1,4 +1,6 @@
 #!/bin/bash
 
-ponymix decrease 10
+#ponymix decrease 5
+midas volume down 5
+
 volume-display

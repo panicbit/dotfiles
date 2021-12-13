@@ -1,5 +1,6 @@
 #!/bin/bash
 
-ponymix increase 10
+#ponymix increase 5
+midas volume up 5
 
 exec volume-display

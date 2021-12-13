@@ -1,7 +1,8 @@
 #!/bin/bash
 
-volume=$(ponymix get-volume)
-msg="Volume: $volume%"
+#volume="$(ponymix get-volume)"
+volume="$(midas volume get)"
+msg="$(echo "$volume 100" | dbar -l 'Volume:' -w 20)"
 
 echo "$msg"
 
@@ -9,4 +10,4 @@ if ponymix is-muted; then
     msg="$msg | ^fg(red)Muted"
 fi
 
-dzen-msg $msg
+dzen-msg "$msg"

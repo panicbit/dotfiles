@@ -2,7 +2,7 @@
 
 #volume="$(ponymix get-volume)"
 volume="$(midas volume get)"
-msg="$(echo "$volume 100" | dbar -l 'Volume:' -w 20)"
+msg="$(echo "$volume" | gdbar -l "Volume: $volume% " -fg '#fff' -bg '#444')"
 
 echo "$msg"
 

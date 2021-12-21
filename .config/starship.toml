@@ -1,0 +1,15 @@
+#add_newline = true
+
+[character]
+#success_symbol = "❯"
+#success_symbol = "⟩"
+
+[rust]
+#symbol = "Ⓡ  "
+style = "bold green"
+
+[package]
+style = "bold green"
+
+[time]
+disabled = false

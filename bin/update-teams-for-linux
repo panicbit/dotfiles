@@ -1,0 +1,10 @@
+#!/usr/bin/env nu
+
+let release = http get https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest
+let url = $release | get assets | where name =~ '-\d+\.\d+\.\d+\.AppImage$' | first | get browser_download_url
+let path = $"($env.HOME)/bin/teams-for-linux"
+
+echo $"Downloading version ($release.name) \(($release.published_at)\)..."
+
+curl -L $url -o $path
+chmod +x $path

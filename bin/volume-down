@@ -1,6 +1,6 @@
 #!/bin/bash
 
 #ponymix decrease 5
-midas volume down 5
+frob volume down 5
 
 volume-display

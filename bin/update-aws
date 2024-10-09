@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+cd ~/.local/opt
+rm -rf aws
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" | bsdtar -xvf-
+chmod +x "aws/dist/aws"
+ln -sf "$(pwd)/aws/dist/aws" ~/bin/aws

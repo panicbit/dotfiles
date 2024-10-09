@@ -1,0 +1,3 @@
+git config --local user.name "panicbit"
+git config --local user.email "panicbit.dev@gmail.com"
+git config --local core.sshCommand "ssh -i ~/.ssh/id_rsa_panicbit"

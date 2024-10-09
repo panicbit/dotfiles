@@ -1,5 +1,5 @@
 #!/bin/bash
 
 #ponymix toggle
-midas volume toggle-mute
+frob volume toggle-mute
 volume-display

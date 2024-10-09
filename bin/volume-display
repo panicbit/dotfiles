@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #volume="$(ponymix get-volume)"
-volume="$(midas volume get)"
-msg="$(echo "$volume" | gdbar -l "Volume: $volume% " -s o -h 20)"
+volume="$(frob volume get)"
+msg="$(echo "$volume" | dzen2-gdbar -l "Volume: $volume% " -s o -h 20)"
 
 echo "$msg"
 

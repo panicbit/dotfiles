@@ -1,3 +1,5 @@
+#!/usr/bin/env nu
+
 let custom_config_name = 'my_config.nu'
 let custom_env_name = 'my_env.nu'
 

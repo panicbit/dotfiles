@@ -22,8 +22,8 @@ def main [] {
             | select when day date localName name counties
         )
 
-        echo "Upcoming holidays:"
-        echo $output
+        print "Upcoming holidays:"
+        $output | table --index false
     }
 }
 

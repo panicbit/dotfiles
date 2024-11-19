@@ -28,7 +28,7 @@ def main [] {
 }
 
 def cached_next_public_holidays [country: string] {
-    let dir = $"($env.HOME)/.cache/nager_holidays"
+    let dir = $"($nu.home-path)/.cache/nager_holidays"
     let path = $"($dir)/($country).json"
 
     mkdir $dir

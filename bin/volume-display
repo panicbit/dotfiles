@@ -2,7 +2,7 @@
 
 #volume="$(ponymix get-volume)"
 volume="$(frob volume get)"
-msg="$(echo "$volume" | dzen2-gdbar -l "Volume: $volume% " -s o -h 20)"
+msg="$(echo "$volume" | gdbar -l "Volume: $volume% " -s o -h 20)"
 
 echo "$msg"
 

@@ -1,0 +1,16 @@
+#!/usr/bin/env nu
+
+def main [] {
+    help main
+}
+
+def "main enable" [] {
+    swaymsg smart_gaps inverse_outer
+    swaymsg gaps horizontal 1280
+}
+
+def "main disable" [] {
+    swaymsg smart_gaps off
+    swaymsg gaps horizontal 0
+}
+

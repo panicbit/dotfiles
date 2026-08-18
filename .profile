@@ -22,7 +22,7 @@ export PATH="$PATH:~/.local/bin"
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" == 1 ]; then
     export XDG_CURRENT_DESKTOP=sway
     echo "Launching Sway..."
-    exec sway --unsupported-gpu
+    exec systemd-run --user --scope --property=BindsTo=graphical-session.target sway --unsupported-gpu
 fi
 
 #if [ $(tty) = "/dev/tty3" ]; then
